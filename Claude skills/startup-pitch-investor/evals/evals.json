@@ -1,0 +1,26 @@
+{
+  "skill_name": "startup-pitch-investor",
+  "evals": [
+    {
+      "id": 0,
+      "name": "standard-saas-series-a",
+      "prompt": "我們是 Series A 階段的 B2B SaaS 新創 ProActiveDB，專注做 AI-driven database query optimization for fast-growing SaaS companies (主要客戶是 100-500 人 SaaS 公司的 platform engineering team)。下個月要對 Tiger Global 一位曾經投過 Snowflake 跟 Databricks 早期輪的合夥人做 15 分鐘 pitch，目標融 $20M。我們目前 ARR $4M，年成長率 220%，net retention 130%，22 位員工。創辦人是 ex-AWS RDS principal engineer。請幫我產出 pitch deck 的 markdown outline。",
+      "expected_output": "Markdown pitch deck outline following the skill's structure. Should include: Mandatory Assumption Disclosure Table (Block 0); appropriate story structure choice (likely Why Now or Problem-Solution-Market); slide-by-slide content with verified/assumption/needs-data labels on every quantitative claim; mandatory competitor analysis chapter with 36-month moat check (Snowflake/Databricks/AWS RDS as candidate big-incumbents); biotech subflow either marked N/A explicitly or omitted with note; ask slide with concrete amount/use/milestones; data citation table; anti-pattern self-check results.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "domain-disambiguation-trigger",
+      "prompt": "Help me write a Series A pitch deck for our DMTA platform startup ArchBase. We're targeting US-based VCs that have experience backing technical founders. Our founding team includes an ex-Schrödinger lead engineer and a former Pfizer medicinal chemistry director. We have $1.5M of pilot ARR from 4 design partners and we're raising $8M.",
+      "expected_output": "The skill should detect that 'DMTA' is ambiguous (medicinal chemistry vs materials vs chip design) and either: (a) explicitly ask the user to disambiguate before proceeding, OR (b) note the assumption (medicinal chemistry given the ex-Schrödinger / ex-Pfizer team context is a strong indicator) and document it prominently in Block 0 Assumption Disclosure. The deck should treat ArchBase as a research/design tool SaaS, route biotech subflow to 'light/N/A' depth, and run the 36-month moat check (Schrödinger, Dotmatics, BIOVIA, Benchling, Nvidia BioNeMo, Google Isomorphic Labs as candidates). Should produce concrete pitch with assumption labels.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "moat-failure-stress-case",
+      "prompt": "我們是 AI-powered 會議摘要工具 BriefAI，專做 Slack 與 MS Teams 的會議錄音、自動摘要、待辦項目擷取。MVP 上線 6 個月，已有 50 家中小企業客戶（10-50 人公司為主），$80K ARR，月增 30%。準備 Seed 階段 pitch deck 給 First Round Capital，融 $3M。請幫我寫。",
+      "expected_output": "The skill should run the 36-month moat check rigorously. The candidate big-incumbents (Microsoft Copilot/Teams, Google Meet/Workspace, Slack/Salesforce, Zoom AI, OpenAI direct integrations, Otter.ai, Fireflies) all have strong claim on the dimensions: Technical (Y - all could clone), Distribution (Y - they own the channel), Talent (probably N), Time (Y - they're already building these). Weighted score is likely >= 3.0, triggering the verdict 'product needs reconsideration'. The skill should communicate this verdict to the user, not paper over with optimistic positioning. May still produce a deck but should include explicit warning slide and recommendation to define a sharper wedge (e.g., specific vertical, specific workflow, specific data source).",
+      "files": []
+    }
+  ]
+}

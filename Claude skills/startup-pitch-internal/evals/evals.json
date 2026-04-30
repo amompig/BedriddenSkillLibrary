@@ -1,0 +1,26 @@
+{
+  "skill_name": "startup-pitch-internal",
+  "evals": [
+    {
+      "id": 0,
+      "name": "first-board-update-no-baseline",
+      "prompt": "我們是 Series A SaaS 新創 NeuralBase（developer tools for ML pipelines），下週有第一次正式的 board meeting (3 位董事：1 位領投基金 partner + 2 位 angels)。Q1 數據：ARR 從 $400K 成長到 $620K，但 paying customer churn 從 5% 上升到 15%。下個工程主管離職要找替代。runway 14 個月。請幫我做 90 分鐘的 Q1 board update deck。",
+      "expected_output": "The skill should detect that this is the first board meeting (Step 1.10 prior baseline question) and explicitly handle the absence of prior baseline — either by marking Plan as needs-data with a note that future meetings will have explicit Q-on-Q comparison, OR by establishing a baseline using the current quarter's data as Q0 reference. The deck should follow the Board Update template with: KPI vs Plan (where Plan is marked appropriately), Top 3 wins / Top 3 misses (the churn increase is a major miss requiring root cause), surprises section (engineering lead departure is a surprise), capital state with runway analysis, decision items (likely around hiring + churn intervention), and Q+1 commitments. Anti-pattern self-check should pass — no whitewashing of the churn jump.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "all-hands-hard-quarter",
+      "prompt": "Q2 過得很糟。我們失去了最大客戶（佔 ARR 25%）— 他們被收購後合約沒續約。三位資深工程師離職（兩位是被挖角去 OpenAI、一位個人因素）。runway 從 18 月縮為 11 月。下個月要做全公司 all-hands（30 人）。團隊士氣低落，不少同事在問是否要找下家。我需要面對這些現實，但也需要重新凝聚共識。幫我寫 all-hands deck。",
+      "expected_output": "The skill should apply the All-hands narrative template with strict adherence to the 'challenges paired with response' rule. The deck must NOT use manufactured optimism — the team will detect it. The deck SHOULD include: vision recap (one slide reaffirming the why), wins from the quarter (even small ones — concrete project names, customer stories), the major challenges named honestly (lost largest customer, departures, runway compression), each challenge paired with explicit response (new customer pipeline, hiring plan, runway management actions), the one big thing for the team to rally around (must be concrete and credible, not aspirational), recognition / culture moment, roadmap preview, Q&A time. The deck must not skip the hard news, but must always pair it with action. Anti-pattern self-check should specifically verify no manufactured optimism.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "team-weekly-unsourced-kpi",
+      "prompt": "幫我寫 engineering team 這週的 weekly sync deck。我們上週 ship 了 3 個 features (新 dashboard、新 API endpoint v2、修了一個 critical security bug)。產品團隊跟 design team 還在 review 我們的新 onboarding flow。DAU 大概 500 左右，月底前希望衝到 600。下週要開始做 multi-tenant architecture 的 refactor。",
+      "expected_output": "The skill should apply the Team Update template (lighter weight than board update). It should: (1) challenge the unsourced 'DAU 大概 500' — the data verification protocol requires KPI to have a system source like Mixpanel/Amplitude/internal dashboard. The skill should either ask the user for the source or mark this as [assumption — founder recall] in the disclosure table. (2) produce a focused 5-10 slide deck with: last week shipped, blockers (design review pending could be one), this week goals (multi-tenant refactor start), KPI snapshot (with source label), action items / asks. Should NOT pad with strategic content inappropriate for team weekly. Should NOT include moat-check or biotech subflow at this level (per level_design.md cadence rules).",
+      "files": []
+    }
+  ]
+}

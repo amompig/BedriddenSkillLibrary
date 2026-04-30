@@ -1,0 +1,12 @@
+# vault-curator 內務檔案不進公開 repo
+_curator/
+
+# OS / IDE 雜訊
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# 大檔可考慮走 git-lfs（本 repo 不主動轉換）
