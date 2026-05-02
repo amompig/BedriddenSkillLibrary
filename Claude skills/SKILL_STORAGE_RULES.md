@@ -121,4 +121,46 @@ addyosmani 的 repo-root `references/` 慣例（多 skill 共享）**不採用**
 3. 呼叫 `anthropic-skills:skill-creator`，要求：
    - skill 資料夾建立在 `D:\Claude skills\<skill-name>\`。
    - SKILL.md 維持 150 行內，細節進 `references/`。
-   - 不要在 skill 內留 workspace / eval �
+   - 不要在 skill 內留 workspace / eval 結果。
+4. skill-creator 完成後，搬移所有非 skill 產出物到 `_meta/`。
+5. 更新根目錄 `README.md`。
+6. （重要）回讀 SKILL.md，檢查 frontmatter `description` 是否同時涵蓋中英觸發語與排除條件。
+7. **呼叫 `skill-governance` 對整個 repo 跑稽核**，確認新 skill 沒有違反本檔任何規則。報告會落在 `_meta/audits/repo/`。若有 CRITICAL FAIL 必須修復後才算完成。
+
+## 9. 鏈式觸發慣例（chain-triggering）
+
+Skill 不能直接呼叫另一支 skill；觸發鏈由 Claude（orchestrator）執行。SKILL.md 內若需要鏈式觸發稽核 skill，固定寫法如下：
+
+**內容產出型 skill（如 startup-pitch-*、biomedical-lit-search 等）**
+SKILL.md 最後一個 step 寫：
+
+```markdown
+## Step N（最後一步）：產出後稽核
+
+完成 deliverable 後，**必須**呼叫 `output-supervisor`，傳入：
+- target_file: <剛才產出的檔案絕對路徑>
+- source_skill: <本 skill 名>
+
+把稽核結果中所有 CRITICAL FAIL 摘要呈現給使用者，詢問是否依建議修正後再交付。
+```
+
+**Repo 結構變動型流程（如 §8 skill-creator 流程）**
+工作流文件最後一步呼叫 `skill-governance`，無需參數（預設掃 `D:\Claude skills\`）。
+
+**鏈式觸發要件**
+- 被鏈式觸發的 skill 必須標明 input contract（哪些參數來自前一支、哪些向使用者問）
+- 被觸發 skill 不應再鏈式觸發第三支 skill（避免無限鏈）
+- 鏈式觸發失敗（檔案不存在、source_skill 沒有 audit_checklist.md）時，被觸發 skill 需 graceful degrade 並提示使用者，不可硬中止整個任務
+
+## 10. 違規檢查清單
+
+整理 / review 既有 skill 時跑這份：
+
+- [ ] 根目錄只剩 skill 資料夾 + README + SKILL_STORAGE_RULES + `_meta/`
+- [ ] 每支 skill 都有 SKILL.md（大寫）且有合法 frontmatter
+- [ ] 每支 skill 名稱符合 kebab-case
+- [ ] 每支 skill 的 SKILL.md ≤ 150 行
+- [ ] 沒有 skill 內含有 workspace / 評估結果 / 暫存產物
+- [ ] 沒有 skill 用相對路徑跨 skill 引用
+- [ ] 每支 skill description 含中英觸發詞 + 排除條件
+- [ ] `_meta/` 子目錄分類正確（templates / stress-tests / eval-tools / backlog / workspaces）

@@ -33,3 +33,12 @@ A literature table with columns: **Ref | Title | Venue | DOI/PMID/arXiv | Region
 - Do not use bare URLs as citations — extract DOI / PMID / arXiv ID.
 - Do not conflate preprint with peer-reviewed status — flag preprints explicitly in the Venue column.
 - Do not cite Wikipedia, news articles, or marketing pages as primary references for clinical claims.
+
+## Step 5 (final): Output supervision (chain-triggered)
+
+After producing the literature table, **save it to a markdown file** in the user's working directory (if it isn't already), then **invoke `output-supervisor`** with:
+
+- `target_file`: absolute path to the saved markdown
+- `source_skill`: `biomedical-lit-search`
+
+`output-supervisor` will read `references/audit_checklist.md` and independently verify column completeness, verification tags, region coverage, citation hygiene, and downstream coupling. Surface any CRITICAL FAIL items, propose fixes, and offer to apply them before delivery is final. Per `SKILL_STORAGE_RULES.md` §9, this step is mandatory.

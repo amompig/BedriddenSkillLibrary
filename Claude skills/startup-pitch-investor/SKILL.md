@@ -78,4 +78,15 @@ Save to the user's working directory. Tell them the next step is to feed it to a
 
 ## Internal vs external — when to redirect
 
-If the user asks for a board update, all-hands deck, team sync, or any internal communication, **redirec
+If the user asks for a board update, all-hands deck, team sync, or any internal communication, **redirect them to the `startup-pitch-internal` skill**. The two skills share infrastructure but have different rules around bad-news disclosure, level depth, and section emphasis. Do not try to handle internal pitches here — the rules will collide.
+
+## Step 7 (final): Output supervision (chain-triggered)
+
+After saving the markdown outline, **invoke `output-supervisor`** with:
+
+- `target_file`: absolute path to the saved markdown
+- `source_skill`: `startup-pitch-investor`
+
+`output-supervisor` will read `references/audit_checklist.md` and verify the deliverable independently. Surface any CRITICAL FAIL items it finds to the user, propose fixes, and offer to apply them before the deck is considered final.
+
+This is the second pair of eyes. Step 6 is the skill's self-gate; Step 7 is the independent audit. Do not skip Step 7 — chain-triggering is mandatory per `SKILL_STORAGE_RULES.md` §9.

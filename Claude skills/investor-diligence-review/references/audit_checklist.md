@@ -90,4 +90,12 @@ Severity grouping: **CRITICAL** (any one failing → overall FAIL) vs **WARN**.
 
 ### Tone / formatting
 
-- [ ] **Voice is p
+- [ ] **Voice is peer-to-peer, blunt** (not founder-coaching tone)
+- [ ] **No bullet padding** — every line earns its place
+- [ ] **No diplomatic hedging** without specifics
+
+### Offline / degraded mode handling
+
+- [ ] If OFFLINE mode triggered, **prominent banner at memo top** with the exact text from `research_checklist.md` §Offline
+- [ ] Conviction ceiling respected (max Medium in offline mode)
+- [ ] §11 ends with "re-run with web search enabled" reminder

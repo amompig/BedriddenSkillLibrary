@@ -39,3 +39,12 @@ Read `references/divergent_heuristics.md`. Cover ≥3 pain-point types, ≥2 mod
 - Do not propose data the user cannot realistically obtain (multi-center raw RF data without IRB; real-time inter-hospital streaming without governance).
 - Do not propose timelines that ignore the 6–9 month HWDC + IRB lead time when claims linkage is involved.
 - Do not score a 5 on any criterion without explicit justification — 5 means "best-in-class", not "good".
+
+## Step 6 (final): Output supervision (chain-triggered)
+
+After producing Parts D and E, **save them to a markdown file** in the user's working directory (if not already), then **invoke `output-supervisor`** with:
+
+- `target_file`: absolute path to the saved markdown
+- `source_skill`: `clinical-research-ideation`
+
+`output-supervisor` will read `references/audit_checklist.md` and independently verify mandatory candidate fields, 7-criteria scoring, funding-fit specificity, top-3 down-select logic, and anti-saturation hygiene. Surface any CRITICAL FAIL items, propose fixes, and offer to apply them before delivery is final. Per `SKILL_STORAGE_RULES.md` §9, this step is mandatory.

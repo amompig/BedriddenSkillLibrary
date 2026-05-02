@@ -159,4 +159,4 @@ D:\Bedridden Library\
 
 **不**做「跨 source 總 MOC」——每個 source 是獨立的子展示廳。
 
-未來若需要跨 source 的入口頁，可在 Bedridden Library 根目錄維護一份 README.md 含兩個 source 的入口連結（這個由 vault-curator 在 first_run 寫一份基本版，cataloger 不維護
+未來若需要跨 source 的入口頁，可在 Bedridden Library 根目錄維護一份 README.md 含兩個 source 的入口連結（這個由 vault-curator 在 first_run 寫一份基本版，cataloger 不維護）。

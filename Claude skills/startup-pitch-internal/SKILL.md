@@ -84,4 +84,15 @@ Save to the user's working directory. Tell the user the next step is to feed it 
 ## When to redirect
 
 - User asks for an investor pitch / fundraising deck → redirect to `startup-pitch-investor`
-- User describes a hybrid (e.g., a board meeting where outside inv
+- User describes a hybrid (e.g., a board meeting where outside investors will be present in their investor capacity, not board capacity) → ask which mode they want and apply that skill's rules
+
+## Step 8 (final): Output supervision (chain-triggered)
+
+After saving the markdown outline, **invoke `output-supervisor`** with:
+
+- `target_file`: absolute path to the saved markdown
+- `source_skill`: `startup-pitch-internal`
+
+`output-supervisor` will read `references/audit_checklist.md` and apply the level-conditional rules independently. Surface any CRITICAL FAIL items it finds, propose fixes, and offer to apply them before delivery is considered final.
+
+Step 7 is the skill's self-gate; Step 8 is the independent audit. Do not skip Step 8 — chain-triggering is mandatory per `SKILL_STORAGE_RULES.md` §9.

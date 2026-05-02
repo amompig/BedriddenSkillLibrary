@@ -120,4 +120,21 @@ Some `audit_checklist.md` rules require minimum counts (e.g., "Layer 3 ≥5 name
 
 - If a count-threshold rule depends on web-search-only data (stealth competitors, comparable deal valuations, specific funding rounds, fresh market sizing), and the memo has:
   - Prominent OFFLINE banner at the top, AND
-  - The relevant section consists entirely of `[needs-research]` or `[OFFLINE — RECALL ONLY]` entries with explicit acknow
+  - The relevant section consists entirely of `[needs-research]` or `[OFFLINE — RECALL ONLY]` entries with explicit acknowledgment
+
+  → **count this rule as PASS** with a note: "OFFLINE-mode exception applied; rule is structurally unmeetable without web search; memo correctly degrades."
+
+- If the memo is OFFLINE but the section silently omits the layer (no `[needs-research]` entries, no banner) → still FAIL (degradation must be visible).
+
+- If the memo is ONLINE but the count is below threshold → standard FAIL (no exception).
+
+The principle: **degradation must be visible to count as exception**. A memo that hides its OFFLINE limitation is worse than one that shouts about it.
+
+## When the user pushes back
+
+Sometimes the user will say "this rule doesn't apply to my case" (e.g., "this is a non-biotech deck so the IP/Reg/Reimb chapter shouldn't be required"). Two valid responses:
+
+1. If the source skill's checklist already has conditional language ("IF biotech, THEN..."), evaluate the condition and update the rule's verdict to N/A. Document in the report.
+2. If the user wants to override an unconditional rule, mark the rule as WAIVED in the report with the user's stated reason. Do NOT silently pass it.
+
+This way the audit trail preserves what was checked, what failed, and what the user explicitly accepted.
