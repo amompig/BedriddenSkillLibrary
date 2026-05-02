@@ -13,8 +13,8 @@ total_entries: 1
 ## 2026-04-30
 
 ### Commit
-- Hash: `(pending user git ops)`
-- Message: `[curator] 2026-04-30 multi-source sync (first sync): B(+12 skills + 2 root files)`
+- Hash: `271e94a`
+- Message: `[curator] 2026-04-30 multi-source sync (first sync): A(+40) B(+85)`
 
 ### 新增 skill（12）
 - [biomedical-lit-search](./biomedical-lit-search/SKILL.md) — 內容產出型
