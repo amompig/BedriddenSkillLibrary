@@ -1,13 +1,13 @@
 ---
 maintained_by: vault-cataloger
-last_updated: 2026-04-30 05:59
+last_updated: 2026-05-02 07:00
 total_files: 40
 source_path: D:\\Obsidian\\TorchBase\\TorchBased\\Claude workspace\\Basic
 ---
 
 # Claude basic Map of Contents
 
-> 自動維護。請勿手動編輯。最後更新：2026-04-30 05:59
+> 自動維護。請勿手動編輯。最後更新：2026-05-02 07:00
 
 ## 總覽
 
@@ -88,10 +88,3 @@ source_path: D:\\Obsidian\\TorchBase\\TorchBased\\Claude workspace\\Basic
 | 2026-04-27 | [AI_Agent_與_Skill_新手教學PPT](./AI_Agent_與_Skill_新手教學PPT.pptx) | 新增 |
 | 2026-04-27 | [AI_Agent_與_Skill_完整教學](./AI_Agent_與_Skill_完整教學.md) | 新增 |
 | 2026-04-27 | [Skill 索引](./Skill 索引.md) | 新增 |
-| 2026-04-24 | [更新日誌](./更新日誌.md) | 新增 |
-| 2026-04-24 | [如何同步更新 Skills](./如何同步更新 Skills.md) | 新增 |
-| 2026-04-24 | [AlloyDB Basics](./Skills/alloydb-basics.md) | 新增 |
-| 2026-04-24 | [api-and-interface-design](./Skills/api-and-interface-design.md) | 新增 |
-| 2026-04-24 | [BigQuery Basics](./Skills/bigquery-basics.md) | 新增 |
-| 2026-04-24 | [browser-testing-with-devtools](./Skills/browser-testing-with-devtools.md) | 新增 |
-| 2026-04-24 | [ci-cd-and-automation](./Skills/ci-cd-and-automation.md) | 新增 |
