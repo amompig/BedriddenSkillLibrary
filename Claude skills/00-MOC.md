@@ -1,6 +1,6 @@
 ---
 maintained_by: vault-cataloger
-last_updated: 2026-05-01 07:00
+last_updated: 2026-05-02 20:11
 total_skills: 12
 source_path: D:\\Claude skills
 ---
@@ -42,6 +42,12 @@ source_path: D:\\Claude skills
 
 | 日期 | Skill | 操作 |
 |------|-------|------|
+| 2026-05-02 | [biomedical-lit-search](./biomedical-lit-search/SKILL.md) | 修改 |
+| 2026-05-02 | [clinical-research-ideation](./clinical-research-ideation/SKILL.md) | 修改 |
+| 2026-05-02 | [internal-cataloger](./internal-cataloger/SKILL.md) | 修改 |
+| 2026-05-02 | [longform-writer](./longform-writer/SKILL.md) | 修改 |
+| 2026-05-02 | [startup-pitch-internal](./startup-pitch-internal/SKILL.md) | 修改 |
+| 2026-05-02 | [startup-pitch-investor](./startup-pitch-investor/SKILL.md) | 修改 |
 | 2026-04-30 | [longform-writer](./longform-writer/SKILL.md) | 新增 |
 | 2026-04-30 | [longform-architect](./longform-architect/SKILL.md) | 新增 |
 | 2026-04-30 | [internal-cataloger](./internal-cataloger/SKILL.md) | 新增 |
